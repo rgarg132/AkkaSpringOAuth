@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataSources version="1">
+	<sources>
+		<source id = "1" name="facebook" oAuth="yes">
+			<url>www.facebook.com</url>
+			<maxlimit>1000</maxlimit>
+		</source>
+		<source id = "2" name="twitter" oAuth="yes">
+			<url>www.twitter.com</url>
+			<maxlimit>1000</maxlimit>
+		</source>
+	</sources>
+</DataSources>

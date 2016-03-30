@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="sourceContainerBO"
+		class="main.com.people.search.common.bo.impl.SourceContainerBOImpl">
+		<constructor-arg name = "inputSource" value = "resources/InputSources.csv"></constructor-arg>
+		<property name="dataSourceParserBO" ref="dataSourceParserBO"></property>
+		<!-- <property name="inputSource" value="resources/InputSources.csv"></property> -->
+	</bean>
+
+	<bean id="peopleSearchBO" class="main.com.people.search.bo.impl.PeopleSearchBOImpl">
+		<property name="sourceContainerBO" ref="sourceContainerBO"></property>
+		<property name="filterDataSourceBO" ref="filterDataSourceBO"></property>
+		<property name="akkaExtension" ref = "akkaExtension"></property>		
+	</bean>
+
+
+	<bean id="filterDataSourceBO"
+		class="main.com.people.search.bo.impl.FilterDataSourceBOImpl" >
+	</bean>
+
+	<bean id = "akkaExtension" class = "main.com.people.search.factory.AkkaExtensionImpl">
+	</bean>
+	
+</beans>
